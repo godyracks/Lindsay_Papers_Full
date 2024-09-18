@@ -520,6 +520,78 @@ color: #999393;
 .see-more-btn:hover {
     background-color: #0056b3;
 }
+@media (max-width: 768px) {
+    .banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        /* padding-top: 100px; */
+        background-color: #FFFFFF;
+        height: 180px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .banner-left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 5px;
+        padding-left: 8px;
+        max-width: 100px;
+    }
+    
+    .banner-left .number {
+        font-size: 50px;
+        font-weight: 900;
+    }
+    
+    .banner-left .text {
+        font-size: 14px;
+        font-weight: normal;
+        margin-top: 5px;
+    }
+    
+    .banner-right {
+        flex: 2;
+        margin-left: 18px;
+        display: flex;
+        align-items: center;
+        height: 100%;
+       
+    }
+    
+    
+    .banner-right img {
+        height: 60px;
+        width: auto;
+        max-width: 100px;
+        margin-right: 10px;
+        padding-right: 5px;
+        object-fit: contain;
+    }
+    .see-more-btn {
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+        padding: 10px 20px;
+        height: 40px;
+        font-size: 14px;
+        color: white;
+        background-color: #2B2B2B;
+        border: none;
+        border-radius: 38px;
+        cursor: pointer;
+    }
+    
+    .see-more-btn:hover {
+        background-color: #0056b3;
+    }
+}
 
 /* banner end */
 .divider {
@@ -580,6 +652,48 @@ color: #999393;
 .odd-card .title,
 .odd-card .content {
     color: #1A1A1A;
+}
+@media (max-width: 768px) {
+    .highlights {
+        background-color: #FFFFFF;
+    }
+    .highlight-cards {
+        display: flex;
+        justify-content: space-between;
+        max-width: 100%;
+        margin: 0 auto; 
+        padding: 20px 0;
+        gap: 10px;
+    }
+    
+    .highlight-card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        margin-top: 15px;
+    }
+    
+    .highlight-card .icon img{
+        width: 40px;
+         height: 40px;
+        color: #333;
+        margin-bottom: 25px;
+    }
+    
+    .highlight-card .title {
+        font-size: 16px;
+        font-weight: 800;
+        margin-bottom: 15px;
+        color: #1A1A1A;
+    }
+    
+    .highlight-card .content {
+        font-size: 12.9px;
+        color: #666;
+    }
 }
 
 /* highlights end */
@@ -888,13 +1002,100 @@ color: #999393;
     margin-top: 20px; /* Ensure some space above the button */
 }
 
+@media (max-width: 768px) {
+    .steps {
+        background-color: #FBFCF8;
+        text-align: center;
+        padding: 20px 10px;
+    }
+    
+    .steps h2 {
+        font-size: 24px;
+        color: #1A1A1A;
+        margin-bottom: 40px;
+    }
+    
+    .steps-container {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        margin-bottom: 30px;
+    }
+    
+    .step-card {
+        background-color: transparent;
+        padding: 8px;
+        border-radius: 10px;
+        width: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: start; /* Align items to the start */
+        position: relative;
+    }
+    
+    .step-card .step-wrapper {
+        position: relative;
+        display: column;
+        align-items: start;
+    }
+    
+    .step-number {
+        font-size: 24px;
+        font-weight: 800;
+        color: #6E6E6E;
+        text-align: left;
+        z-index: 1;
+    }
+    
+    .step-line {
+        flex: 1;
+        height: 3px;
+        border-radius: 12px;
+        width: 100px;
+        background-color: #6E6E6E;
+    }
+    
+    .step-content {
+        text-align: left; 
+        margin-top: 20px; 
+        padding-left: 3px; 
+    }
+    
+    .step-content h3 {
+        font-size: 16px;
+        color: #6E6E6E;
+        margin-bottom: 10px;
+    }
+    
+    .step-content p {
+        font-size: 12.8px;
+        color: #666;
+        margin-top: 30px;
+    }
+    
+    .get-quote-button {
+        display: inline-block;
+        padding: 10px 20px;
+        height: 45px;
+        max-width: 150px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #1C1C1C;
+        background-color: #ECECEF;
+        border: 2px solid #1C1C1C;
+        border-radius: 38px;
+        cursor: pointer;
+        text-decoration: none;
+        margin-top: 20px; /* Ensure some space above the button */
+    }
+}
 
 
 /* steps end */
 
 /* whycards */
 .why {
-    background-image: url('/images/b-w-overlay.jpg'); /* Add your cover image */
+    background-image: url('http://localhost/lp/public/images/b-w-overlay.jpg');  /* Add your cover image */
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
@@ -956,13 +1157,73 @@ color: #999393;
 /* Responsive Design */
 @media (max-width: 768px) {
     .why-card {
-        width: 45%; /* 2 cards per row on tablet sizes */
+        width: 45%; 
     }
+    
+.why {
+    background-image: url('http://localhost/lp/public/images/b-w-overlay.jpg'); /* Add your cover image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 10px 10px;
+  
+
+}
+
+.why h2 {
+    font-size: 24px;
+    color: #1A1A1A;
+    margin-bottom: 40px;
+}
+
+.why-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.why-card {
+    max-width: 30%;
+    width: 300px; 
+    height: 230px;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.bordered {
+    background: linear-gradient(180deg, rgba(250, 246, 249, 1) 34%, rgba(176, 176, 176, 0.3) 83%, rgba(250, 246, 249, 1) 100%);
+  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.why-card h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1A1A1A;
+    margin-bottom: 5px;
+    padding-bottom: 20px;
+}
+
+.why-card p {
+    font-size: 12.9px;
+    color: #1A1A1A;
+    line-height: 1.6;
+    max-width: 250px;
+}
 }
 
 @media (max-width: 576px) {
     .why-card {
-        width: 100%; /* 1 card per row on mobile sizes */
+        width: 100%; 
     }
 }
 
@@ -1018,6 +1279,9 @@ color: #999393;
 
 .quote-button:hover {
     background-color: #86888a; /* Darker blue on hover */
+}
+@media (max-width: 768px) {
+
 }
 
 /* get uote end */
