@@ -745,15 +745,38 @@ color: #999393;
 }
 
  /* Responsive Styling */
- @media (max-width: 900px) {
+ @media (max-width: 768px) {
+    .reviews {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 10px 0 0 10px;
+        background-color: #c8c8c8;
+        
+    }
+    
+    .right-section {
+        max-width: 100%;
+        overflow: hidden;
+        position: relative;
+        background-color: aliceblue;
+        padding: 100px 0 0 0;
+    }
+    
+ 
+    
+
         .reviews-container {
             flex-direction: column;
             align-items: center;
+
         }
 
+      
         .left-section {
+         
             order: 3;
             text-align: center;
+         
         }
 
         .right-section {

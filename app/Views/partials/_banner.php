@@ -13,9 +13,6 @@
         <img src="<?= base_url('public/images/hesi.jpg') ?>" alt="Exam Logo 3">
         <img src="<?= base_url('public/images/proctor.jpg') ?>" alt="Exam Logo 4">
         <img src="<?= base_url('public/images/gre.png') ?>" alt="Exam Logo 5">
-
-
-
         <button class="see-more-btn">See More</button>
     </div>
    
