@@ -10,39 +10,46 @@
   
 </head>
 <body>
-    <!-- nav start -->
-      <!-- Navbar -->
-      <nav class="navbar">
-        <div class="navbar-container">
-            <!-- Logo -->
-            <div class="logo">
-                <img src="<?= base_url('public/images/logo.png') ?>" alt="Logo"> 
-                <span class="star-rating">
-                    <span class="material-symbols-outlined">star</span>
-                    <span class="material-symbols-outlined">star</span>
-                    <span class="material-symbols-outlined">star</span>
-                    <span class="material-symbols-outlined">star</span>
-                    <span class="material-symbols-outlined">star_half</span>
-                </span>
-            </div>
-        
-            <!-- Links -->
-            <div class="navbar-links" id="navbar-links">
-                <a href="<?= base_url('/') ?>">Features</a>
-                <a href="<?= base_url('fees') ?>">Fees</a>
-                <a href="<?= base_url('services') ?>">Services</a>
-                <a href="<?= base_url('about') ?>">About</a>
-            </div>
-        
-            <!-- Get Started Button -->
-            <a href="#" class="cta-btn">Get Started</a>
-        
-            <!-- Hamburger Menu -->
-            <div class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
+   <!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="<?= base_url('public/images/logo.png') ?>" alt="Logo">
+      <span class="star-rating">
+        <span class="material-symbols-outlined">star</span>
+        <span class="material-symbols-outlined">star</span>
+        <span class="material-symbols-outlined">star</span>
+        <span class="material-symbols-outlined">star</span>
+        <span class="material-symbols-outlined">star_half</span>
+      </span>
+    </div>
+
+    <!-- Get Started Button -->
+    <a href="#" class="cta-btn">Get Started</a>
+
+    <!-- Hamburger Menu -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span class="material-symbols-outlined menu">menu</span>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal for Navigation Links -->
+<div class="modal" id="navbar-modal">
+  <div class="modal-content">
+    <div class="close-btn" id="close-modal">
+      <span class="material-symbols-outlined">close</span>
+    </div>
+    <div class="navbar-links">
+      <a href="<?= base_url('/') ?>">Features</a>
+      <a href="<?= base_url('fees') ?>">Fees</a>
+      <a href="<?= base_url('services') ?>">Services</a>
+      <a href="<?= base_url('about') ?>">About</a>
+    </div>
+  </div>
+</div>
+
 
      <!-- nav end -->
      <?= $this->renderSection('content') ?>
@@ -86,7 +93,27 @@
        <!-- footer end -->
 <script src="<?= base_url('public/scripts/scripts.js') ?>"></script>
 <script>
- 
+ document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbarModal = document.getElementById('navbar-modal');
+    const closeModal = document.getElementById('close-modal');
+
+    menuToggle.addEventListener('click', function() {
+        navbarModal.style.display = 'block';
+    });
+
+    closeModal.addEventListener('click', function() {
+        navbarModal.style.display = 'none';
+    });
+
+    // Close modal if clicked outside of modal content
+    window.addEventListener('click', function(event) {
+        if (event.target == navbarModal) {
+            navbarModal.style.display = 'none';
+        }
+    });
+});
+
 </script>
 
 </body>

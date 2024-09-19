@@ -68,26 +68,7 @@ renderSlide(currentSlide);
 
 
 //toggle
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const navbarLinks = document.getElementById('navbar-links');
 
-    menuToggle.addEventListener('click', () => {
-        navbarLinks.classList.add('show');
-    });
-
-    menuClose.addEventListener('click', () => {
-        navbarLinks.classList.remove('show');
-    });
-
-    // Optional: Close menu when clicking outside
-    document.addEventListener('click', (event) => {
-        if (!navbarLinks.contains(event.target) && !menuToggle.contains(event.target)) {
-            navbarLinks.classList.remove('show');
-        }
-    });
-});
 
 
  document.addEventListener('DOMContentLoaded', () => {

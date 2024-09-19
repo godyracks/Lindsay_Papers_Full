@@ -106,17 +106,58 @@ body, html {
     font-size: 16px; /* Adjusted font size */
     font-weight: bold;
 }
-
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
+.menu-toggle{
+    margin-right: 5px;
 }
+.menu-toggle span .menu{
+    font-size: 24px;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1002; /* Above the sticky navbar */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Can be adjusted */
+    max-width: 400px; /* Max width for mobile responsiveness */
+    position: relative; /* Needed to position the close button */
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    left: 45%;
+    cursor: pointer;
+    padding: 10px; /* Adjust as needed */
+    font-size: 24px; /* Adjust font size */
+}
+
+.modal-content .navbar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px; /* Space below the close button */
+    text-align: center; /* Center-align links */
+}
+
+
+
 
 /* Responsive styles */
 @media (max-width: 768px) {
     .navbar {
-        height: 50px; /* Allow height to adjust for smaller screens */
+        height: 60px; /* Allow height to adjust for smaller screens */
         padding: 10px 2px; /* Adjusted padding */
     }
     .navbar-container {
@@ -127,27 +168,9 @@ body, html {
        height: 60px;
     }
 
-    .navbar-links {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background-color: #f2f2f5;
-        text-align: center;
-        padding: 10px 0;
-        display: none;
-        transition: all 0.3s ease-in-out;
-    }
 
-    .navbar-links.show {
-        display: flex;
-    }
 
-    .menu-toggle {
-        display: block;
-        margin-right: 5px;
-    }
+  
 
     .navbar .cta-btn {
         order: 0;
