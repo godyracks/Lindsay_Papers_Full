@@ -41,4 +41,47 @@
        
     </div>
 </div>
+<!-- Video Modal -->
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <video id="videoPlayer" controls>
+            <source src="path-to-your-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+<script>
+    document.getElementById('btn-play').onclick = function() {
+    // Show the modal
+    document.getElementById('videoModal').style.display = 'block';
+    
+    // Play the video
+    var video = document.getElementById('videoPlayer');
+    video.play();
+};
+
+// Close the modal when clicking on the close button
+document.querySelector('.vid-close-btn').onclick = function() {
+    closeModal();
+};
+
+// Close the modal when clicking outside of the modal content
+window.onclick = function(event) {
+    if (event.target === document.getElementById('videoModal')) {
+        closeModal();
+    }
+};
+
+function closeModal() {
+    // Hide the modal
+    document.getElementById('videoModal').style.display = 'none';
+    
+    // Pause the video
+    var video = document.getElementById('videoPlayer');
+    video.pause();
+    video.currentTime = 0; // Reset video to the start
+}
+
+</script>
 <!-- hero end -->

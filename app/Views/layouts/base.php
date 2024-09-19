@@ -24,6 +24,13 @@
         <span class="material-symbols-outlined">star_half</span>
       </span>
     </div>
+    <!-- Links -->
+    <div class="navbar-links" id="navbar-links">
+    <a href="<?= base_url('/') ?>">Features</a>
+      <a href="<?= base_url('fees') ?>">Fees</a>
+      <a href="<?= base_url('services') ?>">Services</a>
+      <a href="<?= base_url('about') ?>">About</a>
+     </div>
 
     <!-- Get Started Button -->
     <a href="#" class="cta-btn">Get Started</a>
@@ -93,26 +100,35 @@
        <!-- footer end -->
 <script src="<?= base_url('public/scripts/scripts.js') ?>"></script>
 <script>
- document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menu-toggle');
     const navbarModal = document.getElementById('navbar-modal');
+    const modalContent = document.querySelector('.modal-content');
     const closeModal = document.getElementById('close-modal');
 
     menuToggle.addEventListener('click', function() {
         navbarModal.style.display = 'block';
+        // Reset animation
+        modalContent.style.opacity = '0';
+        modalContent.style.transform = 'scale(0.9)';
+        // Trigger animation
+        setTimeout(() => {
+            modalContent.style.opacity = '1';
+            modalContent.style.transform = 'scale(1)';
+        }, 10); // Slight delay to trigger the animation
     });
 
     closeModal.addEventListener('click', function() {
         navbarModal.style.display = 'none';
     });
 
-    // Close modal if clicked outside of modal content
     window.addEventListener('click', function(event) {
         if (event.target == navbarModal) {
             navbarModal.style.display = 'none';
         }
     });
 });
+
 
 </script>
 
