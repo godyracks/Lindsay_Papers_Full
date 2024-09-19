@@ -146,10 +146,20 @@ body, html {
 
     .menu-toggle {
         display: block;
+        margin-right: 5px;
     }
 
     .navbar .cta-btn {
         order: 0;
+    }
+    .navbar .cta-btn {
+        padding: 6px 12px; /* Adjusted padding */
+        border: 2px solid black;
+        border-radius: 25px;
+        text-decoration: none;
+        color: black;
+        font-size: 12.9px; /* Adjusted font size */
+        font-weight: bold;
     }
 }
 
@@ -1665,6 +1675,20 @@ color: #999393;
     .faq-container {
         width: 100%;
         padding: 0 10px;
+    }
+    .faq-section h2{
+        color: var(--big-title);
+        font-size: 18px;
+    }
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        cursor: pointer;
+        border: none;
+        background-color: #FAF9F6;
+        font-size: 12.9px;
     }
 }
 
