@@ -17,15 +17,19 @@ class Testimonials extends Controller
         $isLoggedIn = $session->get('isLoggedIn');
         $google_id = $session->get('google_id');
         $username = $session->get('username');
+        $profile_image = $session->get('profile_image'); // Add this line to get the profile image
 
         // Log individual session variables
         log_message('info', "isLoggedIn: {$isLoggedIn}, google_id: {$google_id}, username: {$username}");
 
         // Check if user is logged in by verifying 'isLoggedIn', 'google_id', and 'username'
         if ($isLoggedIn && $google_id && $username) {
-            // User is logged in, render the testimonials view
+            // User is logged in, render the testimonials view with session data
             log_message('info', 'User is logged in. Displaying testimonials view.');
-            return view('storiesview');
+            return view('storiesview', [
+                'username' => $username,
+                'profile_image' => $profile_image // Pass the profile image to the view
+            ]);
         } else {
             // Log exactly what went wrong
             log_message('error', 'User is not logged in. Missing one or more of isLoggedIn, google_id, or username.');
