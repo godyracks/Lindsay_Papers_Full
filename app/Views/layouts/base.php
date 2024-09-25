@@ -33,7 +33,7 @@
      </div>
 
     <!-- Get Started Button -->
-    <a href="#" class="cta-btn">Get Started</a>
+    <a href="<?= base_url('emailform') ?>" class="cta-btn">Get Started</a>
 
     <!-- Hamburger Menu -->
     <div class="menu-toggle" id="menu-toggle">

@@ -1,5 +1,5 @@
 <!-- Reviews -->
-<div class="reviews">
+<div class="reviews" id="stories">
     <!-- Top section with the title -->
     <div class="reviews-header">
         <h2>Our Customer Stories</h2>
