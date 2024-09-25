@@ -65,7 +65,7 @@ class GoogleAuthController extends Controller
             }
 
             // Redirect to profile after successful login
-            return redirect()->to('/profile');
+            return redirect()->to('/stories');
         }
 
         return redirect()->to('/');

@@ -13,7 +13,7 @@ class Testimonials extends Controller
         // Check if user is logged in by checking session variables
         if ($session->has('google_id') && $session->has('username')) {
             // User is logged in, render the testimonials view
-            return view('testimonialsview');
+            return view('storiesview');
         }
     }
 
@@ -52,7 +52,7 @@ class Testimonials extends Controller
         // Insert data into the database
         if ($model->insert($data)) {
             log_message('info', 'Testimonial successfully inserted.');
-            return redirect()->to('/testimonials')->with('success', 'Your review has been submitted successfully.');
+            return redirect()->to('/')->with('success', 'Your review has been submitted successfully.');
         } else {
             // Log any database errors
             $errors = $model->errors();

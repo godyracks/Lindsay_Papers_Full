@@ -21,6 +21,10 @@ Options -Indexes
 	RewriteCond %{REQUEST_URI} (.+)/$
 	RewriteRule ^ %1 [L,R=301]
 
+	 # Remove index.php from URLs
+	 RewriteCond %{REQUEST_URI} ^/index\.php
+	 RewriteRule ^index\.php(.*)$ /$1 [L,R=301,NC]
+
 	# Rewrite "www.example.com -> example.com"
 	RewriteCond %{HTTPS} !=on
 	RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
