@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Lindsay Papers</title>
     <link rel="stylesheet" type="text/css" href="<?= base_url('public/styles/styles.css') ?>"/>
-  
+  <style>.nav-link.active {color: #00A8CC;}</style>
 </head>
 <body>
    <!-- Navbar -->
@@ -26,14 +26,14 @@
     </div>
     <!-- Links -->
     <div class="navbar-links" id="navbar-links">
-    <a href="<?= base_url('/') ?>">Features</a>
-      <a href="<?= base_url('fees') ?>">Fees</a>
-      <a href="<?= base_url('services') ?>">Services</a>
-      <a href="<?= base_url('about') ?>">About</a>
+    <a href="<?= base_url('/') ?>" class="nav-link <?= uri_string() == '' ? 'active' : '' ?>">Features</a>
+      <a href="<?= base_url('fees') ?>" class="nav-link <?= uri_string() == 'fees' ? 'active' : '' ?>">Fees</a>
+      <a href="<?= base_url('services') ?>" class="nav-link <?= uri_string() == 'services' ? 'active' : '' ?>">Services</a>
+      <a href="<?= base_url('about') ?>" class="nav-link <?= uri_string() == 'about' ? 'active' : '' ?>">About</a>
      </div>
 
     <!-- Get Started Button -->
-    <a href="<?= base_url('emailform') ?>" class="cta-btn">Get Started</a>
+    <a href="<?= base_url('emailform') ?>" class="cta-btn nav-link <?= uri_string() == 'emailform' ? 'active' : '' ?>">Get Started</a>
 
     <!-- Hamburger Menu -->
     <div class="menu-toggle" id="menu-toggle">
@@ -49,10 +49,10 @@
       <span class="material-symbols-outlined">close</span>
     </div>
     <div class="navbar-links">
-      <a href="<?= base_url('/') ?>">Features</a>
-      <a href="<?= base_url('fees') ?>">Fees</a>
-      <a href="<?= base_url('services') ?>">Services</a>
-      <a href="<?= base_url('about') ?>">About</a>
+      <a href="<?= base_url('/') ?>" class="nav-link <?= uri_string() == '' ? 'active' : '' ?>">Features</a>
+      <a href="<?= base_url('fees') ?>" class="nav-link <?= uri_string() == 'fees' ? 'active' : '' ?>">Fees</a>
+      <a href="<?= base_url('services') ?>" class="nav-link <?= uri_string() == 'services' ? 'active' : '' ?>">Services</a>
+      <a href="<?= base_url('about') ?>" class="nav-link <?= uri_string() == 'about' ? 'active' : '' ?>">About</a>
     </div>
   </div>
 </div>

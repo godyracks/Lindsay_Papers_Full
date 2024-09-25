@@ -37,6 +37,9 @@ body, html {
     z-index: 1001; 
     transition: all 0.3s ease-in-out; 
 }
+.nav-link.active {
+    color: #00A8CC;
+}
 
 /* Navbar container */
 .navbar-container {
