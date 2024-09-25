@@ -1,11 +1,14 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\TestimonialsModel;
 
 class Fees extends BaseController
 {
     public function index()
     {
-        return view('feesview.php');
+        $model = new TestimonialsModel();
+        $data['testimonials'] = $model->getTestimonialsWithImages();
+        return view('feesview', $data);
     }
 }

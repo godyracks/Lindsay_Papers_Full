@@ -1,4 +1,54 @@
 <div class="form-container">
+
+  <!-- Step 1: Academic Level and Deadline -->
+  <div class="form-step">
+    <h3>STEP 1: ACADEMIC LEVEL AND DEADLINE</h3>
+    <div class="form-group">
+      <label>Academic Level *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="academic-level" value="college-1-2"> College (1-2)</label>
+        <label><input type="radio" name="academic-level" value="college-3-4"> College (3-4)</label>
+        <label><input type="radio" name="academic-level" value="masters"> Masters</label>
+        <label><input type="radio" name="academic-level" value="phd"> PhD</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Deadline *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="deadline" value="12-hours"> 12 hours</label>
+        <label><input type="radio" name="deadline" value="24-hours"> 24 hours</label>
+        <label><input type="radio" name="deadline" value="48-hours"> 48 hours</label>
+        <label><input type="radio" name="deadline" value="3-days"> 3 days</label>
+        <label><input type="radio" name="deadline" value="5-days"> 5 days</label>
+        <label><input type="radio" name="deadline" value="7-days"> 7 days</label>
+        <label><input type="radio" name="deadline" value="14-days"> 14 days</label>
+      </div>
+    </div>
+
+
+  <!-- Step 2: Paper Details -->
+  <div class="form-step">
+    <h3>STEP 2: PAPER DETAILS</h3>
+    <div class="form-group">
+      <label for="paper-type">Type of Paper *</label>
+      <input type="text" id="paper-type" name="paper-type" placeholder="Type your paper type">
+      <small>If your subject is not on the list, select the option "other".</small>
+    </div>
+
+    <div class="form-group">
+      <label for="discipline">Field or Discipline</label>
+      <input type="text" id="discipline" name="discipline" placeholder="Select your field or discipline">
+      <small>If your subject is not on the list, select the option "other".</small>
+    </div>
+
+    <div class="form-group">
+      <label for="instructions">Paper Instructions</label>
+      <textarea id="instructions" name="instructions" placeholder="Enter detailed paper instructions"></textarea>
+    </div>
+  </div>
+</div>
+
         <form>
             <!-- Upload Additional Material -->
             <div class="form-section">
@@ -102,3 +152,76 @@
             </div>
         </form>
     </div>
+    <style>
+        .form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-step {
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.radio-group label {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+input[type="text"], textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+small {
+  font-size: 12px;
+  color: #666;
+}
+
+input[type="text"]:focus, textarea:focus {
+  outline: none;
+  border-color: #009688;
+}
+
+    </style>
