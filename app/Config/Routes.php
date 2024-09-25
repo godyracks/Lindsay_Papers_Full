@@ -13,4 +13,4 @@ $routes->get('/google-callback', 'GoogleAuthController::callback');
 $routes->get('/stories', 'Testimonials::index');
 $routes->get('auth', 'Login::index');
 $routes->get('/google-login', 'GoogleAuthController::login');
-
+$routes->post('/submit-story', 'Testimonials::submitTestimonial');

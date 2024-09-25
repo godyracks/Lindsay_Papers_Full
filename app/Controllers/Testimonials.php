@@ -14,6 +14,11 @@ class Testimonials extends Controller
         if ($session->has('google_id') && $session->has('username')) {
             // User is logged in, render the testimonials view
             return view('storiesview');
+        } else {
+            // User is not logged in, render the testimonials view with a prompt to log in
+            return view('storiesview', [
+                'login_prompt' => 'You need to <a href="' . site_url('/google-login') . '">Continue with Google</a> to submit a testimonial.'
+            ]);
         }
     }
 
@@ -52,7 +57,7 @@ class Testimonials extends Controller
         // Insert data into the database
         if ($model->insert($data)) {
             log_message('info', 'Testimonial successfully inserted.');
-            return redirect()->to('/')->with('success', 'Your review has been submitted successfully.');
+            return redirect()->to('/stories')->with('success', 'Your review has been submitted successfully.');
         } else {
             // Log any database errors
             $errors = $model->errors();

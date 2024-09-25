@@ -130,6 +130,21 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    const sticky = navbar.offsetTop;
+
+    function checkSticky() {
+        if (window.scrollY > sticky) {
+            navbar.classList.add('sticky');
+        } else {
+            navbar.classList.remove('sticky');
+        }
+    }
+
+    window.addEventListener('scroll', checkSticky);
+});
+
 </script>
 
 </body>
