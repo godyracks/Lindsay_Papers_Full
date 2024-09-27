@@ -26,7 +26,7 @@
                 <h1 id="slide-title"></h1>
                 <p id="slide-description"></p>
                 <div class="buttons">
-                    <button class="btn" id="btn-quote">Get Quote</button>
+                    <a href="<?= base_url('emailform') ?>"><button class="btn" id="btn-quote">Get Quote</button></a>
                     <button class="btn btn-play" id="btn-play">
                         <i class="fas fa-play-circle"></i> Watch Video
                     </button>

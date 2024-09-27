@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-    <a href="#" class="get-quote-button">Get Quote</a>
+    <a href="<?= base_url('emailform') ?>" class="get-quote-button">Get Quote</a>
 </section>
 
   <!-- steps end -->

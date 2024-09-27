@@ -7,7 +7,7 @@
     <div class="reviews-container">
         <div class="left-section">
             <p>You too can share your story and your experience about our services</p>
-            <button class="share-btn">Share Now</button>
+            <a href="<?= base_url('stories') ?>"><button class="share-btn">Share Now</button></a>
             <div class="review-arrows">
                 <div class="arrow left-arrow">
                     <img src="<?= base_url('public/images/icons/back.png')?>" alt="back_arrow"/>
