@@ -1,4 +1,10 @@
 <div class="form-container">
+  <!-- Progress Bar -->
+  <div class="progress-bar">
+    <div data-step="Step 1" class="active"></div>
+    <div data-step="Step 2"></div>
+    <div data-step="Step 3"></div>
+  </div>
 
   <!-- Step 1: Academic Level and Deadline -->
   <div class="form-step active">
@@ -25,21 +31,21 @@
         <label><input type="radio" name="deadline" value="14-days"> 14 days</label>
       </div>
     </div>
-
-    <button type="button" class="next-btn">Next</button>
   </div>
 
   <!-- Step 2: Paper Details -->
   <div class="form-step">
-    <h3>STEP 2: PAPER DETAILS</h3>
+    <h3>STEP 2: PAPER DETAILS AND MATERIALS</h3>
     <div class="form-group">
       <label for="paper-type">Type of Paper *</label>
       <input type="text" id="paper-type" name="paper-type" placeholder="Type your paper type">
+      <small>If your subject is not on the list, select the option "other".</small>
     </div>
 
     <div class="form-group">
       <label for="discipline">Field or Discipline</label>
       <input type="text" id="discipline" name="discipline" placeholder="Select your field or discipline">
+      <small>If your subject is not on the list, select the option "other".</small>
     </div>
 
     <div class="form-group">
@@ -47,14 +53,85 @@
       <textarea id="instructions" name="instructions" placeholder="Enter detailed paper instructions"></textarea>
     </div>
 
-    <button type="button" class="prev-btn">Previous</button>
-    <button type="button" class="next-btn">Next</button>
+    <!-- Upload Additional Material -->
+    <div class="form-section">
+      <label>Upload Additional Material</label>
+      <a href="#" class="add-file">Add File</a>
+      <p>You may upload any useful materials for the writer.</p>
+    </div>
+
+    <!-- Math Assignments/Projects -->
+    <div class="form-section">
+      <label>Math Assignments/Projects *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="math_size" value="small"> Small</label>
+        <label><input type="radio" name="math_size" value="medium"> Medium</label>
+        <label><input type="radio" name="math_size" value="large"> Large</label>
+        <label><input type="radio" name="math_size" value="na"> Not Applicable</label>
+      </div>
+      <p>Small=10 questions, Medium=25 questions, Large=up to 40 questions</p>
+    </div>
   </div>
 
-  <!-- Step 3: Final Information -->
+  <!-- Step 3: Citation Style, Contact Information, and Payment -->
   <div class="form-step">
-    <h3>STEP 3: CONTACT AND PAYMENT</h3>
+    <h3>STEP 3: CITATION STYLE, CONTACT, AND PAYMENT</h3>
+    <div class="form-group">
+      <label for="sources">Number of Sources</label>
+      <input type="text" id="sources" name="sources" placeholder="Type the number of sources required. No limits.">
+    </div>
 
+    <div class="form-group">
+      <label>Number of Pages *</label>
+      <select name="pages">
+        <option>Select Number of Pages</option>
+        <!-- Add more options as needed -->
+      </select>
+      <p>Double Spaced(275 Words Per Page)<br>Single Spaced(550 Words Per Page)</p>
+    </div>
+
+    <div class="form-group">
+      <label>PowerPoint Presentation</label>
+      <select name="slides">
+        <option>Select Number of Slides</option>
+        <!-- Add more options as needed -->
+      </select>
+      <p>10 slides = 10 minutes</p>
+    </div>
+
+    <div class="form-group">
+      <label>Paper Format or Citation Style *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="citation_style" value="mla"> MLA</label>
+        <label><input type="radio" name="citation_style" value="apa"> APA</label>
+        <label><input type="radio" name="citation_style" value="chicago"> Chicago</label>
+        <label><input type="radio" name="citation_style" value="na"> Not Applicable</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Do my Online Class for me *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="online_class" value="8_weeks"> 8 Weeks Online Class</label>
+        <label><input type="radio" name="online_class" value="12_weeks"> 12 Weeks Online Class</label>
+        <label><input type="radio" name="online_class" value="16_weeks"> 16 Weeks Online Class</label>
+        <label><input type="radio" name="online_class" value="na"> Not Applicable</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Graphics *</label>
+      <div class="radio-group">
+        <label><input type="radio" name="graphics" value="poster"> Poster</label>
+        <label><input type="radio" name="graphics" value="infographic"> Infographic</label>
+        <label><input type="radio" name="graphics" value="brochure"> Brochure</label>
+        <label><input type="radio" name="graphics" value="smartart"> SmartArt</label>
+        <label><input type="radio" name="graphics" value="newsletter"> Newsletter</label>
+        <label><input type="radio" name="graphics" value="na"> Not Applicable</label>
+      </div>
+    </div>
+
+    <!-- Contact Information -->
     <div class="form-group">
       <label for="email">Email *</label>
       <input type="email" id="email" name="email">
@@ -65,11 +142,26 @@
       <input type="tel" id="phone" name="phone">
     </div>
 
-    <button type="button" class="prev-btn">Previous</button>
-    <button type="submit" class="submit-btn">Submit</button>
+    <!-- Payment Section -->
+    <div class="payment">
+      <label>Total</label>
+      <div class="total">$0.00</div>
+      <div class="payment-buttons">
+        <button type="button" class="paypal-btn">PayPal Checkout</button>
+        <button type="button" class="card-btn">Debit or Credit Card</button>
+      </div>
+    </div>
   </div>
 
+ <!-- Navigation Buttons -->
+<div class="step-nav">
+  <button type="button" class="prev-btn" style="display: none;">Previous</button>
+  <button type="button" class="next-btn">Next</button>
+  <button type="button" class="submit-btn" style="display: none;">Submit</button>
 </div>
+
+</div>
+
 
     <style>/* General form styling */
 .form-container {
@@ -256,13 +348,40 @@ button[disabled] {
 
     </style>
     <script>
-      const steps = document.querySelectorAll(".form-step");
+  const steps = document.querySelectorAll(".form-step");
 const nextBtns = document.querySelectorAll(".next-btn");
 const prevBtns = document.querySelectorAll(".prev-btn");
+const submitBtn = document.querySelector(".submit-btn");
+const progressBarItems = document.querySelectorAll(".progress-bar div");
 let currentStep = 0;
 
 // Display the first step
 steps[currentStep].classList.add("active");
+updateButtonVisibility();
+
+// Update progress bar
+function updateProgressBar(step) {
+  progressBarItems.forEach((item, index) => {
+    if (index <= step) {
+      item.classList.add("active");
+    } else {
+      item.classList.remove("active");
+    }
+  });
+}
+
+// Update button visibility
+function updateButtonVisibility() {
+  prevBtns.forEach((btn) => {
+    btn.style.display = currentStep === 0 ? "none" : "inline-block";
+  });
+
+  nextBtns.forEach((btn) => {
+    btn.style.display = currentStep === steps.length - 1 ? "none" : "inline-block";
+  });
+
+  submitBtn.style.display = currentStep === steps.length - 1 ? "inline-block" : "none";
+}
 
 // Event listener for "Next" buttons
 nextBtns.forEach((button, index) => {
@@ -271,6 +390,8 @@ nextBtns.forEach((button, index) => {
       steps[currentStep].classList.remove("active");
       currentStep++;
       steps[currentStep].classList.add("active");
+      updateProgressBar(currentStep);
+      updateButtonVisibility();
     }
   });
 });
@@ -281,6 +402,8 @@ prevBtns.forEach((button, index) => {
     steps[currentStep].classList.remove("active");
     currentStep--;
     steps[currentStep].classList.add("active");
+    updateProgressBar(currentStep);
+    updateButtonVisibility();
   });
 });
 
@@ -291,7 +414,8 @@ function validateStep(stepIndex) {
 
   const requiredInputs = currentFormStep.querySelectorAll("input[required], textarea[required], select[required]");
   requiredInputs.forEach(input => {
-    if (!input.value || (input.type === "radio" && !input.checked)) {
+    const radioInputs = currentFormStep.querySelectorAll('input[type="radio"][name="' + input.name + '"]');
+    if ((input.type === "radio" && ![...radioInputs].some(r => r.checked)) || !input.value.trim()) {
       input.style.border = "1px solid red";
       isValid = false;
     } else {
@@ -299,7 +423,19 @@ function validateStep(stepIndex) {
     }
   });
 
+  // Disable next button if validation fails
+  nextBtns.forEach(btn => {
+    btn.disabled = !isValid;
+  });
+
   return isValid;
 }
+
+// Event listener for "Submit" button
+submitBtn.addEventListener("click", () => {
+  // Add your form submission logic here
+  alert("Form submitted!");
+});
+
 
     </script>
