@@ -1,4 +1,4 @@
-<div class="form-container">
+<div class="form-container" style="margin-top: 20px; margin-bottom:20px;">
   <!-- Progress Bar -->
   <div class="progress-bar">
     <div data-step="Step 1" class="active"></div>
@@ -54,14 +54,38 @@
     </div>
 
     <div class="form-group">
-      <label for="discipline">Field or Discipline</label>
-      <input type="text" id="discipline" name="discipline" placeholder="Select your field or discipline">
+    <label for="discipline">Field of Discipline *</label>
+    <select name="discipline" id="discipline" required>
+        <option value="">Select Field of Discipline</option>
+        <option value="arts">Arts</option>
+        <option value="business">Business</option>
+        <option value="computer-science">Computer Science</option>
+        <option value="education">Education</option>
+        <option value="engineering">Engineering</option>
+        <option value="health-sciences">Health Sciences</option>
+        <option value="humanities">Humanities</option>
+        <option value="law">Law</option>
+        <option value="mathematics">Mathematics</option>
+        <option value="natural-sciences">Natural Sciences</option>
+        <option value="social-sciences">Social Sciences</option>
+        <option value="information-technology">Information Technology</option>
+        <option value="psychology">Psychology</option>
+        <option value="environmental-science">Environmental Science</option>
+        <option value="agriculture">Agriculture</option>
+        <option value="architecture">Architecture</option>
+        <option value="nursing">Nursing</option>
+        <option value="pharmacy">Pharmacy</option>
+        <option value="veterinary-science">Veterinary Science</option>
+        <option value="public-health">Public Health</option>
+        <option value="performing-arts">Performing Arts</option>
+        <option value="other-discipline">Other</option>
+    </select>
       <small>If your subject is not on the list, select the option "other".</small>
     </div>
 
     <div class="form-group">
       <label for="instructions">Paper Instructions</label>
-      <textarea id="instructions" name="instructions" placeholder="Enter detailed paper instructions"></textarea>
+      <textarea id="instructions" name="instructions" placeholder="Enter detailed paper instructions"  style="height:100px;"></textarea>
     </div>
 
     <!-- Upload Additional Material -->
@@ -200,7 +224,7 @@
       margin: 0 auto;
       padding: 20px;
       font-family: Arial, sans-serif;
-      background-color: #fff;
+      background-color: #FBFCF8;
       border: 1px solid #ddd;
       border-radius: 5px;
   }
@@ -221,14 +245,14 @@
 
   .progress-bar div {
       width: 30%;
-      height: 5px;
+      height: 3px;
       background-color: #ddd;
       border-radius: 5px;
       transition: background-color 0.3s;
   }
 
   .progress-bar div.active {
-      background-color: #4CAF50;
+      background-color: #00A8CC;
   }
 
   .form-group {
@@ -262,12 +286,20 @@
   }
 
   .step-nav button {
-      padding: 10px 20px;
-      border: none;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 5px;
+
       cursor: pointer;
+
+
+      font-size: 14px;
+    transition: background-color 0.3s ease;
+    padding: 10px 20px;
+    height: 40px;
+    font-size: 18px;
+    color: white;
+    background-color: #2B2B2B;
+    border: none;
+    border-radius: 38px;
+    cursor: pointer;
   }
 
   .step-nav button:disabled {
